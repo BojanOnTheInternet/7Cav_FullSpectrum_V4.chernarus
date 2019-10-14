@@ -9,17 +9,17 @@ before_script:
 - sudo apt-get install armake -y
 script:
 - export VERSION=`cat description.ext  | grep -o 'onLoadName = ".*"' | grep -o 'v[0-9.][0-9.]*'`
-- armake build -w unquoted-string -w redefinition-wo-undef -w excessive-concatenation -x ".*" -x "*.pbo" -x "*.md" . 7Cav_FullSpectrum_$VERSION.ruha.pbo
+- armake build -w unquoted-string -w redefinition-wo-undef -w excessive-concatenation -x ".*" -x "*.pbo" -x "*.md" . 7Cav_FullSpectrum_$VERSION.chernarus.pbo
 - git tag $VERSION
 deploy:
   if:
     branch: master
   provider: releases
   skip_cleanup: true
-  file: '7Cav_FullSpectrum_$VERSION.ruha.pbo'
+  file: '7Cav_FullSpectrum_$VERSION.chernarus.pbo'
   on:
     branch: master
-    repo: 7Cav/7Cav_FullSpectrum_V4.ruha
-  name: '7th Cavalry Full Spectrum $VERSION - ruha'
+    repo: 7Cav/7Cav_FullSpectrum_V4.chernarus
+  name: '7th Cavalry Full Spectrum $VERSION - chernarus'
   api_key:
-    secure: LxiT7RJTel/oLskEFAhDZsSui2ilFMoSQTQTSYVLvjZgtvrnKOyC9H5xJS7HPao5aQbhjBgV4ga/7H2l8/Tup57KROfMZ0uBM8upKIKBvONdA7kOK8LeJrmVOifXeRjH82KCEmzVo8KGcGHexjROQrOGDBUkepkQfZInukNDShQiu/pzVh6UO5P1EZt0x3/0EsY3XXsl7WgdOUqSn2h132fyPlv5yGsvcKnMdaksde00Sfi+M7+3esyb+07wB88Lyi7sJZcejRUvwT2vvhOd/olsHtesKpaGubW0oalicHni5y3Rp70Z5Zp5hatrDDB2ahMsYy/VYGRIfetLmVl45KgZIQ48prn0D34/1ffA/ifhtVCzK17UCtsznjN/BUeKwZohuUvugbeYgXJIoF+VAbCMjPcSndCEfytp6VgboTnptMmx5LaZ8rhVtvrU/U2mKOkDfj1hMPONNxcpca4ERuNvqht9WQu+D+UBPNOKAIRDImP3SD4REchvWvI3dpO5nEgUmUadksRfIVN/Qw9rhlXpVEQN5WTGc6VjXXORYtht+j4MO7s349ltdnWUFOH4dlFCSyydue2g0xCojc2TqIZTrteJlklg6Jlvu3Bsde68hwqzaNs8p/7xpf3wltqvxHotVYZDN7GSK/HNj1e4aFtAg91uRjj7h/Ls/SjqGT0=
+    secure: rQuRSj5oY9ndjhz86ExH/ZOb625hZTevmvIvOlyaS7ULo/xXapHNutKLHLGmfRqWALoJgZT9BSXWxPRazky0iinA/t8iUqdjShLv5OlH/hk3iCF+RNiH22uVVnu684EwqU+ZAQYZoSKQNj/aJbm4zslGQ5vHQW5B+Vta0xRZVq7QIey3b7KoFHBXPCkA6SUy5a1u3oEjO5knstk/ZygxcSOwgwUWjeMa5wWJgoU/6gg6wnZUpC//+gDrxbTUKQHfMbWcAYZB/D1JTwQ4qaX2+mY863Vo9g46D/vKpE7oKB8q28YHKnybJEJtrkxE1olvznnW718PFU4JnBXTdRegEpYo0gceAhcJFiX/QcT65zPM1fcBXnm87W9UUpiaoH7BR/cAWnW77slwHnP8efQiio2FjzjkO8bgpZC62eKUjPRbCwDx9S9IjkNkwBD+ICG5JPJZG6iF9NzaPKZMn1wrcaMhpMv6nJT3VPKnEMxGwtQGaJ+Tsqp5fdEzSTGBq5dl0HfE4vdKBlGdUdSDELnIlyhRcPKuIQ+ZEx02S4utsko0ZcN1K50hVAp66+KoCGWok96XtEva5IMOkYPL+7ejlPPG1NKf6NxazXamaUt42qRervN2yHVfoCA8i3dLhmt0sqcKkKGDn25L/ibbkAc6/Jy0ASGtesr7NJin1ORqAWg=
